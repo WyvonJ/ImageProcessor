@@ -1,17 +1,19 @@
 # image-processor
 
 > An electron-vue project
+> 基于Electron和Vue的图像处理软件 使用了ElementUI的滑动条组件
+> 实现图像的基本处理以及各种滤镜
 
 ## Build Setup
 
 ``` bash
-# install dependencies
+# install dependencies 安装项目依赖
 npm install
 
-# serve with hot reload at localhost:9080
+# serve with hot reload at localhost:9080 热加载运行
 npm run dev
 
-# build electron app for production
+# build electron app for production 构建生产版软件
 npm run build
 
 # lint all JS/Vue component files in `app/src`
