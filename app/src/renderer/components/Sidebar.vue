@@ -2,12 +2,12 @@
   <aside class="sidebar">
     <div class="shape-modify">
       <div class="rotate" @click="adjustChange('rotate')">
-        <i class="material-icons">rotate_90_degrees_ccw</i>
+        <img src="./icon/rotate_90_degrees_ccw.svg" alt="rotate_90_degrees_ccw">
         <br/>
         <span>旋转</span>
       </div>
       <div class="mirror" @click="adjustChange('mirror')">
-        <i class="material-icons">compare</i>
+        <img src="./icon/compare.svg" alt="compare">
         <br/>
         <span>镜像</span>
       </div>
@@ -30,7 +30,7 @@
               <div class="light" :class="{'toggled':toggleLight}">
                 <div class="light-title">
                   <button class="toggle" @click="toggleLightSettings">
-                    <i class="material-icons" :class="{'toggled':toggleLight}">arrow_drop_down</i>
+					        <img src="./icon/arrow_drop_down.svg"  :class="{'toggled':toggleLight}" alt="arrow_drop_down">
                     <span>亮度</span>
                   </button>
                   <button class="reset" @click="resetLight">重置</button>
@@ -58,7 +58,7 @@
               <div class="color" :class="{'toggled':toggleColor}">
                 <div class="color-title">
                   <button class="toggle" @click="toggleColorSettings">
-                    <i class="material-icons" :class="{'toggled':toggleColor}">arrow_drop_down</i>
+					        <img src="./icon/arrow_drop_down.svg"  :class="{'toggled':toggleLight}" alt="arrow_drop_down">
                     <span>色度</span>
                   </button>
                   <button class="reset" @click="resetColor">重置</button>
@@ -117,10 +117,10 @@
       </div>
       <div class="edit-actions">
         <div class="undo-all-edits" @click="undoAllEdits">
-          <i class="material-icons">undo</i> 全部重置
+        <img src="./icon/undo.svg" alt="undo"> 全部重置
         </div>
         <div class="save-image" @click="saveImage">
-          <i class="material-icons">save</i> 保存
+         <img src="./icon/save.svg" alt="save">保存
         </div>
       </div>
     </div>
@@ -367,15 +367,15 @@ export default {
        -moz-box-shadow: 0 0 6px #03a9f4;
             box-shadow: 0 0 6px #03a9f4;
 }
-.rotate i,.mirror i
+.rotate img,.mirror img
 {
     transition: all .3s cubic-bezier(.04,.36,.16,1);
 }
-.rotate:hover i
+.rotate:hover img
 {
 	transform: rotateZ(-360deg);
 }
-.mirror:hover i
+.mirror:hover img
 {
 	transform: rotateY(-180deg);
 }
@@ -524,7 +524,7 @@ span
     height: 24px;
     margin-right: 120px;
 }
-.toggle .material-icons
+.toggle img
 {
     position: relative;
     top: 6px;
@@ -532,7 +532,7 @@ span
     transition: all .3s cubic-bezier(.04,.36,.16,1);
     transform: rotateZ(-90deg);
 }
-.toggle .material-icons.toggled
+.toggle img.toggled
 {
     transform: rotateZ(0);
 }

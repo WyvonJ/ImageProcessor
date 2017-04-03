@@ -24,7 +24,7 @@ let config = {
     ignore: /\b(src|index\.ejs|icons)\b/,
     out: path.join(__dirname, 'builds'),
     overwrite: true,
-    platform: process.env.platform
+    platform: process.env.PLATFORM_TARGET || 'all'
   }
 }
 

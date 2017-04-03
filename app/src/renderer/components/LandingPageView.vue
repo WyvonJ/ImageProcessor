@@ -2,7 +2,7 @@
   <div class="main-container">
     <div id="open-file-holder">
       <div class="input-wrapper">
-        <i class="material-icons">photo</i>
+        <img src="./icon/photo.svg" alt="photo">
         <label for="open-image">打开</label>
         <input type="file" value="打开" id="open-image" accept="image/png,image/jpeg,image/bmp" name="open">
       </div>
@@ -202,7 +202,7 @@
     cursor: pointer;
 }
 
-i
+img
 {
     position: relative;
     top: 4px;
