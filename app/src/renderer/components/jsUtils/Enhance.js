@@ -311,6 +311,7 @@ let Enhance = {
         _d[i * cw * 4 + j * 4 + 3] = d.data[i * cw * 4 + (cw - j) * 4 + 3]
       }
     }
+    console.warn('ll');
     for (let i = 0; i < d.data.length; i += 4) {
       d.data[i] = _d[i]
       d.data[i + 1] = _d[i + 1]

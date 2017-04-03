@@ -74,6 +74,7 @@
           let file=event.target.files[0]
           this.fileName=file.name
           this.fileType=file.type
+          ipcRenderer.send('set-title',file.name)
           reader.readAsDataURL(file)
         })
         holder.addEventListener('dragover', (e) => {
@@ -96,6 +97,7 @@
           let file=event.dataTransfer.files[0]
           this.fileType=file.type
           this.fileName=file.name
+          ipcRenderer.send('set-title',file.name)
           reader.readAsDataURL(file)
         })
         window.addEventListener('resize',()=>{

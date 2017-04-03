@@ -1,6 +1,6 @@
 'use strict'
 
-import { app, BrowserWindow } from 'electron'
+import { app, BrowserWindow,ipcMain } from 'electron'
 
 let mainWindow
 const winURL = process.env.NODE_ENV === 'development'
@@ -11,8 +11,8 @@ function createWindow () {
   mainWindow = new BrowserWindow({
     height: 600,
     width: 800,
-    minWidth: 560,
-    minHeight: 480
+    minWidth: 640,
+    minHeight: 560
   })
 
   mainWindow.loadURL(winURL)
@@ -20,9 +20,12 @@ function createWindow () {
   mainWindow.on('closed', () => {
     mainWindow = null
   })
-
   console.log('mainWindow opened')
 }
+
+ipcMain.on('set-title',(events,message)=>{
+  mainWindow.setTitle('图像处理 - '+message)
+})
 
 app.on('ready', createWindow)
 

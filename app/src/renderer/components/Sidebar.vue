@@ -202,9 +202,6 @@ export default {
         this.colorValue === 0 ? 1 : $aj.color(this.ctx, this.colorValue)
         this.tintValue === 0 ? 1 : $aj.tint(this.ctx, this.tintValue)
         this.noiseValue === 0 ? 1 : $aj.warmth(this.ctx, this.noiseValue)
-
-        this.clarityValue === 0 ? 1 : $aj.clarity(this.ctx, this.clarityValue)
-        this.vignetteValue === 0 ? 1 : $aj.vignette(this.ctx, this.vignetteValue)
         switch (this.enhance) {
           case 'original':
             break
@@ -241,9 +238,8 @@ export default {
             $eh.corrode(this.ctx)
             break
         }
-        if(type==='mirror'&&this.mirror){
+        if(type==='mirror'){
         	 $eh.mirror(this.ctx)
-        	 this.mirror=!this.mirror
         }
            
         if(type==='rotate')
@@ -300,8 +296,6 @@ export default {
       undoAllEdits() {
         this.resetLight()
         this.resetColor()
-        this.clarityValue = 0
-        this.vignetteValue = 0
         this.enhance = 'original'
         this.adjustChange()
       },
