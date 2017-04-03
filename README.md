@@ -13,7 +13,7 @@ npm install
 # serve with hot reload at localhost:9080 热加载运行
 npm run dev
 
-# build electron app for production 构建生产版软件
+# build electron app for production 构建生产版软件 貌似要翻墙 然后windows上面需要以管理员模式打开命令行 
 npm run build
 
 # lint all JS/Vue component files in `app/src`

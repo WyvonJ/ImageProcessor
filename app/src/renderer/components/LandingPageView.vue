@@ -28,15 +28,15 @@
   export default {
     data() {
         return {
-          imgOpened:false,
+          imgOpened: false,
           imgSrc: '',
-          image:new Image(),
+          image: new Image(),
           currentProp: 0,
           min: -1,
           max: 1,
           step: 0.01,
-          fileType:'',
-          fileName:''
+          fileType: '',
+          fileName: ''
         }
       },
       components: {
@@ -54,27 +54,27 @@
           reader = new FileReader(),
           _image = this.image,
           src
- 
+
         _canvas.addEventListener('mousewheel', (event) => {
           //if(!_image.src) return
           //console.log(_image)
-         
+
         })
         open.addEventListener('change', (event) => {
-          reader.onload=(eve) => {
+          reader.onload = (eve) => {
             src = eve.target.result
             _image.src = src
             _this.imgSrc = src
-            $cu.resizeCanvas(ctx,_image)
+            $cu.resizeCanvas(ctx, _image)
             $cu.clearCanvas(ctx)
             $cu.drawInCenter(ctx, _image)
-            _canvas.style.maxWidth=_image.width>holder.clientWidth?holder.clientWidth:_image.width
-            _canvas.style.maxHeight=_image.height>holder.clientHeight?holder.clientHeight:_image.height
+            _canvas.style.maxWidth = _image.width > holder.clientWidth ? holder.clientWidth : _image.width
+            _canvas.style.maxHeight = _image.height > holder.clientHeight ? holder.clientHeight : _image.height
           }
-          let file=event.target.files[0]
-          this.fileName=file.name
-          this.fileType=file.type
-          ipcRenderer.send('set-title',file.name)
+          let file = event.target.files[0]
+          this.fileName = file.name
+          this.fileType = file.type
+          ipcRenderer.send('set-title', file.name)
           reader.readAsDataURL(file)
         })
         holder.addEventListener('dragover', (e) => {
@@ -83,31 +83,31 @@
         })
         holder.addEventListener('drop', (event) => {
           event.preventDefault()
-          
-            reader.onload=(eve) => {
+
+          reader.onload = (eve) => {
             src = eve.target.result
             _image.src = src
             _this.imgSrc = src
-            $cu.resizeCanvas(ctx,_image)
+            $cu.resizeCanvas(ctx, _image)
             $cu.clearCanvas(ctx)
             $cu.drawInCenter(ctx, _image)
-            _canvas.style.maxWidth=_image.width>holder.clientWidth?holder.clientWidth:_image.width
-            _canvas.style.maxHeight=_image.height>holder.clientHeight?holder.clientHeight:_image.height
+            _canvas.style.maxWidth = _image.width > holder.clientWidth ? holder.clientWidth : _image.width
+            _canvas.style.maxHeight = _image.height > holder.clientHeight ? holder.clientHeight : _image.height
           }
-          let file=event.dataTransfer.files[0]
-          this.fileType=file.type
-          this.fileName=file.name
-          ipcRenderer.send('set-title',file.name)
+          let file = event.dataTransfer.files[0]
+          this.fileType = file.type
+          this.fileName = file.name
+          ipcRenderer.send('set-title', file.name)
           reader.readAsDataURL(file)
         })
-        window.addEventListener('resize',()=>{
-          if(!_image.src){
-            _canvas.style.maxWidth=_image.width>holder.clientWidth?holder.clientWidth:_image.width
-            _canvas.style.maxHeight=_image.height>holder.clientHeight?holder.clientHeight:_image.height
+        window.addEventListener('resize', () => {
+          if (!_image.src) {
+            _canvas.style.maxWidth = _image.width > holder.clientWidth ? holder.clientWidth : _image.width
+            _canvas.style.maxHeight = _image.height > holder.clientHeight ? holder.clientHeight : _image.height
           }
         })
       },
-      beforeDestroy(){
+      beforeDestroy() {
         window.removeEventListener('resize')
       },
       name: 'landing-page'
@@ -116,89 +116,117 @@
 </script>
 
 <style scoped>
-#open-file-holder {
-  position: absolute;
-  width: calc(100vw - 282px);
-  height: calc(100vh - 52px);
-  left: 2px;
-  top: 44px;
-  border-radius: 3px;
-  border: 1px transparent dashed;
-  transition: all .3s cubic-bezier(.04, .36, .16, 1);
+#open-file-holder
+{
+    position: absolute;
+    top: 44px;
+    left: 2px;
+
+    width: calc(100vw - 268px);
+    height: calc(100vh - 52px);
+
+    transition: all .3s cubic-bezier(.04, .36, .16, 1);
+
+    border: 1px transparent dashed;
+    border-radius: 3px;
 }
 
-#open-file-holder:hover {
-  border: 1px #03a9f4 dashed;
+#open-file-holder:hover
+{
+    border: 1px #03a9f4 dashed;
 }
 
-#open-file-holder:hover .tip {
-  transition: all .3s cubic-bezier(.04, .36, .16, 1);
-  color: #03a9f4;
+#open-file-holder:hover .tip
+{
+    transition: all .3s cubic-bezier(.04, .36, .16, 1);
+
+    color: #03a9f4;
 }
 
-#open-image {
-  display: none;
+#open-image
+{
+    display: none;
 }
-#canvas{
-  display: inline-block;
-  max-width: 100%;
-  max-height: 100%;
+#canvas
+{
+    display: inline-block;
+
+    max-width: 100%;
+    max-height: 100%;
 }
-#image-holder {
-  z-index: 100;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center; 
-  justify-content: center;
+#image-holder
+{
+    z-index: 100;
+
+    display: flex;
+
+    width: 100%;
+    height: 100%;
+
+    align-items: center;
+    justify-content: center;
 }
-.input-wrapper {
-  position: absolute;
-  top: -40px;
-  left: 10px;
-  height: 32px;
-  width: 84px;
-  line-height: 32px;
-  border: 1px transparent solid;
-  transition: all .3s cubic-bezier(.04, .36, .16, 1);
-  border-radius: 3px;
+.input-wrapper
+{
+    line-height: 32px;
+
+    position: absolute;
+    top: -40px;
+    left: 10px;
+
+    width: 84px;
+    height: 32px;
+
+    transition: all .3s cubic-bezier(.04, .36, .16, 1);
+
+    border: 1px transparent solid;
+    border-radius: 3px;
 }
 
-.input-wrapper:hover {
-  border: 1px #03a9f4 solid;
-  -webkit-box-shadow: 0 0 6px #03a9f4;
-  -moz-box-shadow: 0 0 6px #03a9f4;
-  box-shadow: 0 0 6px #03a9f4;
+.input-wrapper:hover
+{
+    border: 1px #03a9f4 solid;
+    -webkit-box-shadow: 0 0 6px #03a9f4;
+       -moz-box-shadow: 0 0 6px #03a9f4;
+            box-shadow: 0 0 6px #03a9f4;
 }
 
-.input-wrapper label {
-  position: absolute;
-  width: 88px;
-  height: 32px;
-  left: 6px;
-  cursor: pointer;
+.input-wrapper label
+{
+    position: absolute;
+    left: 6px;
+
+    width: 88px;
+    height: 32px;
+
+    cursor: pointer;
 }
 
-i {
-  position: relative;
-  top: 4px;
-  left: -24px;
+i
+{
+    position: relative;
+    top: 4px;
+    left: -24px;
 }
 
-.tip {
-  position: absolute;
-  left: calc(50% - 166px);
-  top: 50%;
-  z-index: 50;
+.tip
+{
+    position: absolute;
+    z-index: 50;
+    top: 50%;
+    left: calc(50% - 166px);
 }
-.disable-mask{
-  position: fixed;
-  right: 0;
-  top: 0;
-  z-index: 2048;
-  width: 256px;
-  height: 100%;
-  cursor: not-allowed;
+.disable-mask
+{
+    position: fixed;
+    z-index: 2048;
+    top: 0;
+    right: 0;
+
+    width: 256px;
+    height: 100%;
+
+    cursor: not-allowed;
 }
 
 </style>

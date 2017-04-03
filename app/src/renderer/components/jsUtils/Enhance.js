@@ -311,7 +311,6 @@ let Enhance = {
         _d[i * cw * 4 + j * 4 + 3] = d.data[i * cw * 4 + (cw - j) * 4 + 3]
       }
     }
-    console.warn('ll');
     for (let i = 0; i < d.data.length; i += 4) {
       d.data[i] = _d[i]
       d.data[i + 1] = _d[i + 1]
@@ -320,40 +319,39 @@ let Enhance = {
     }
     context.putImageData(d, 0, 0)
   },
-  rotate: (context,img) => {
+  rotate: (context, img) => {
     let cw = context.canvas.width
     let ch = context.canvas.height
     let canvas = context.canvas
 
     var n = img.getAttribute('step')
-    if(n== null) 
-     {
-      n=0
-     } 
-    (n>3)? n=0:n++
-    img.setAttribute('step',n)
-    switch(n) {
-      default :
-      case 0 :
+    if (n == null) {
+      n = 0
+    }
+    (n > 3) ? n = 0: n++
+      img.setAttribute('step', n)
+    switch (n) {
+      default:
+        case 0:
         canvas.setAttribute('width', img.width)
-        canvas.setAttribute('height', img.height)
-        context.rotate(0 * Math.PI / 180)
-        context.drawImage(img, 0, 0)
-        break;
-      case 1 :
-        canvas.setAttribute('width', img.height)
+      canvas.setAttribute('height', img.height)
+      context.rotate(0 * Math.PI / 180)
+      context.drawImage(img, 0, 0)
+      break;
+      case 1:
+          canvas.setAttribute('width', img.height)
         canvas.setAttribute('height', img.width)
         context.rotate(90 * Math.PI / 180)
         context.drawImage(img, 0, -img.height)
         break
-      case 2 :
-        canvas.setAttribute('width', img.width)
+      case 2:
+          canvas.setAttribute('width', img.width)
         canvas.setAttribute('height', img.height)
         context.rotate(180 * Math.PI / 180)
         context.drawImage(img, -img.width, -img.height)
         break
-      case 3 :
-        canvas.setAttribute('width', img.height)
+      case 3:
+          canvas.setAttribute('width', img.height)
         canvas.setAttribute('height', img.width)
         context.rotate(270 * Math.PI / 180)
         context.drawImage(img, -img.width, 0)
@@ -407,19 +405,22 @@ let Filters = {
     0, 0, 0, 1, 0
   ],
   polaroid: [
-    1.438, -0.062, -0.062, 0, 0, -0.122, 1.378, -0.122, 0, 0, -0.016, -0.016, 1.483, 0, 0, -0.03, 0.05, -0.02, 1, 0
+    1.438, -0.062, -0.062, 0, 0,
+    -0.122, 1.378, -0.122, 0, 0,
+    -0.016, -0.016, 1.483, 0, 0,
+    -0.03, 0.05, -0.02, 1, 0
   ],
   overall: [
-    1.438, -0.122, -0.016, 0, -0.03, -0.062, 1.378, -0.016, 0, 0.05, -0.062, -0.122, 1.483, 0, -0.02,
+    1.438, -0.122, -0.016, 0, -0.03,
+    -0.062, 1.378, -0.016, 0, 0.05,
+    -0.062, -0.122, 1.483, 0, -0.02,
     0, 0, 0, 1, 0
   ]
 }
 
-///辅助函数
+///辅助函数 距离
 let dist = (x1, y1, x2, y2) => {
   return Math.sqrt((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2))
 }
-
-
 
 export default Enhance

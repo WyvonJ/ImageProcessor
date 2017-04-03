@@ -21,40 +21,54 @@
 </script>
 
 <style type="text/css">
-.slider{
-	display: inline-block;
-	height: 30px;
-	width: 224px;
+.slider
+{
+    display: inline-block;
+
+    width: 224px;
+    height: 30px;
 }
 
-input[type=range] {
-    -webkit-appearance: none;
+input[type=range]
+{
     width: 224px;
-    border-radius: 10px; 
+
     cursor: pointer;
+
+    border-radius: 10px;
+
+    -webkit-appearance: none;
 }
-input[type=range]::-webkit-slider-runnable-track {
+input[type=range]::-webkit-slider-runnable-track
+{
     height: 4px;
+
     background-color: #4d4e4f;
 }
-input[type=range]:focus {
+input[type=range]:focus
+{
     outline: none;
 }
-input[type=range]::-webkit-slider-thumb {
-	transition: all .4s cubic-bezier(.04,.36,.16,1);
-    -webkit-appearance: none;
-    height: 16px;
+input[type=range]::-webkit-slider-thumb
+{
     width: 16px;
+    height: 16px;
     margin-top: -6px; /*使滑块超出轨道部分的偏移量相等*/
-    background: #dedede; 
+
+    transition: all .4s cubic-bezier(.04,.36,.16,1);
+
+    border: solid .125em rgba(205, 224, 230, .5); /*设置边框*/
     border-radius: 8px; /*外观设置为圆形*/
-    border: solid 0.125em rgba(205, 224, 230, 0.5); /*设置边框*/
+    background: #dedede;
+
+    -webkit-appearance: none;
 }
-input[type=range]::-webkit-slider-thumb:hover {
-	border:#35a5e5 1px solid;
-    box-shadow: 0 0 6px rgba(81, 203, 238, 1);
-		-webkit-box-shadow: 0 0 6px rgba(81, 203, 238, 1);
-		-moz-box-shadow: 0 0 6px rgba(81, 203, 238, 1);
+input[type=range]::-webkit-slider-thumb:hover
+{
+    border: #35a5e5 1px solid;
+    -webkit-box-shadow: 0 0 6px rgba(81, 203, 238, 1);
+       -moz-box-shadow: 0 0 6px rgba(81, 203, 238, 1);
+            box-shadow: 0 0 6px rgba(81, 203, 238, 1);
 }
-    
+
 </style>
