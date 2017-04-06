@@ -471,22 +471,22 @@ span
 }
 .tab-box::-webkit-scrollbar
 {
-    width: 8px;
+    width: 6px;
     height: 16px;
 
-    background-color: #f5f5f5;
+    background-color: #2f2f2f;
 }
 
 .tab-box::-webkit-scrollbar-track
 {
-    background-color: #1f1f1f;
+    background-color: #2f2f2f;
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
 }
 
 .tab-box::-webkit-scrollbar-thumb
 {
     border-radius: 10px;
-    background-color: #555;
+    background-color: #03a9f4;
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
 }
 #adjust:checked ~ .tab-title .adjust,
