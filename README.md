@@ -26,17 +26,27 @@ npm run pack
 More information can be found [here](https://simulatedgreg.gitbooks.io/electron-vue/content/docs/npm_scripts.html).
 ---
 
-##图像处理
+## 图像处理
 基本
 *旋转
 *镜像
 调整
-*亮度 对比度 曝光度 阴影 高光
-*色度（饱和度） 色调 添加杂色
+*亮度
+*对比度 
+*曝光度
+*阴影
+*高光
+*色度（饱和度） 
+*色调 
+*添加杂色
 增强
-*暗角 锐化 马赛克 怀旧 模糊 etc
+*暗角 
+*锐化 
+*马赛克 
+*怀旧 
+*模糊 etc
 
-*待添加*
+待添加
 1.按比例裁剪 
 2.任意角度旋转
 3.滤镜效果预览
