@@ -52,5 +52,37 @@ npm run pack
 More information can be found [here](https://simulatedgreg.gitbooks.io/electron-vue/content/docs/npm_scripts.html).
 ---
 
+<<<<<<< HEAD
+=======
+## 图像处理
+基本
+* 旋转
+* 镜像
+调整
+* 亮度
+* 对比度 
+* 曝光度
+* 阴影
+* 高光
+* 色度（饱和度） 
+* 色调 
+* 添加杂色
+增强
+* 暗角 
+* 锐化 
+* 马赛克 
+* 怀旧 
+* 模糊 etc
+
+待添加
+1. 按比例裁剪 
+2. 任意角度旋转
+3. 滤镜效果预览
+4. 亮度和色度预览窗口
+5. 兼容性问题
+6. 待续...
+
+---
+>>>>>>> 278f338da1c1ebab37adf4d7f534bbda5a2dde81
 
 This project was generated from [electron-vue](https://github.com/SimulatedGREG/electron-vue) using [vue-cli](https://github.com/vuejs/vue-cli). Documentation about this project can be found [here](https://simulatedgreg.gitbooks.io/electron-vue/content/index.html).
